@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    
     TextView mTextView;
 
     @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             mTextView.setText("おはよう");
                         } else if(hourOfDay >= 9 && minute >= 59 ){
                             mTextView.setText("おはよう");
-                        } else if(hourOfDay == 10 || minute == 0 ) {
+                        } else if(hourOfDay == 10 || minute >= 0 ) {
                             mTextView.setText("こんにちわ");
                         } else if(hourOfDay >= 17 && minute >= 59){
                             mTextView.setText("こんにちわ");
