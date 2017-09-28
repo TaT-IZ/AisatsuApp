@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    
+
     TextView mTextView;
 
     @Override
@@ -36,20 +36,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        if(hourOfDay == 2 || minute == 0 ){
+
+                        if(2 < hourOfDay && hourOfDay > 10 ){
                             mTextView.setText("おはよう");
-                        } else if(hourOfDay >= 9 && minute >= 59 ){
-                            mTextView.setText("おはよう");
-                        } else if(hourOfDay == 10 || minute >= 0 ) {
+                        } else if(10 <= hourOfDay && hourOfDay > 18 ){
                             mTextView.setText("こんにちわ");
-                        } else if(hourOfDay >= 17 && minute >= 59){
-                            mTextView.setText("こんにちわ");
-                        } else if(hourOfDay >= 18 && minute >= 0){
+                        } else if(18 <= hourOfDay && hourOfDay > 24 ) {
                             mTextView.setText("こんばんわ");
-                        } else if(hourOfDay >= 1 && minute >= 59){
-                            mTextView.setText("こんばんわ");
+                        } else{
+                            mTextView.setText("何かがおかしい");
                         }
-                    }
+                        }
                 },
                 13, // 初期値（時間）
                 0,  // 初期値（分）
