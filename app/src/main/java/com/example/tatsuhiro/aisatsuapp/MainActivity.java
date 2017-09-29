@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView mTextView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
         if (v.getId() == R.id.button1){
             showTimePickerDialog();
         }
@@ -34,17 +34,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showTimePickerDialog() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {
+
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                        if(2 < hourOfDay && hourOfDay > 10 ){
+                        if(hourOfDay >= 2  && hourOfDay <= 10 ){
                             mTextView.setText("おはよう");
-                        } else if(10 <= hourOfDay && hourOfDay > 18 ){
+                        } else if(hourOfDay >= 10 && hourOfDay > 16 ){
                             mTextView.setText("こんにちわ");
-                        } else if(18 <= hourOfDay && hourOfDay > 24 ) {
+                        } else  {
                             mTextView.setText("こんばんわ");
-                        } else{
-                            mTextView.setText("何かがおかしい");
                         }
                         }
                 },
