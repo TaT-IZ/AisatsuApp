@@ -33,23 +33,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void showTimePickerDialog() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-                new TimePickerDialog.OnTimeSetListener() {
+        new TimePickerDialog.OnTimeSetListener() {
 
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+@Override
+public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                        if(hourOfDay >= 2  && hourOfDay <= 10 ){
-                            mTextView.setText("おはよう");
-                        } else if(hourOfDay >= 10 && hourOfDay > 16 ){
-                            mTextView.setText("こんにちわ");
-                        } else  {
-                            mTextView.setText("こんばんわ");
-                        }
-                        }
-                },
-                13, // 初期値（時間）
-                0,  // 初期値（分）
-                true);
+        if(hourOfDay >= 2  && hourOfDay < 10 ){
+        mTextView.setText("おはよう");
+        } else if(hourOfDay >= 10 && hourOfDay < 18 ){
+        mTextView.setText("こんにちわ");
+        } else  {
+        mTextView.setText("こんばんわ");
+        }
+        }
+        },
+        13, // 初期値（時間）
+        0,  // 初期値（分）
+        true);
         timePickerDialog.show();
-    }
-}
+        }
+        }
